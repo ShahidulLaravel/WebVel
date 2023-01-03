@@ -13,15 +13,14 @@ Route::get('/home', [HomeController::class, 'index'])->name('dashboard');
 
 Auth::routes();
 
-// users controller Route grouping 
+// users controller 
 
- Route::get('/users', [userController::class, 'users'])->name('users')->middleware('auth');
 
-Route::controller(userController::class)->prefix('user')->name('user.')->group(function(){ 
+Route::get('/users', [userController::class, 'users'])->name('users')->middleware('auth');
 
-    Route::get('/edit/{user}', 'userEdit')->name('edit')->middleware('auth');
-    Route::put('/update/{user}', 'userUpdate')->name('update')->middleware('auth');
-    Route::delete('/delete/{user}', 'userDelete')->name('delete')->middleware('auth');
+Route::get('/user/delete/{user_id}', [userController::class, 'userDelete'])->name('user.delete')->middleware('auth');
 
-});
+
+
+
 

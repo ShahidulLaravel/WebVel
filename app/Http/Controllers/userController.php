@@ -15,23 +15,8 @@ class userController extends Controller
         $total_user = User::count();
         return view('admin.users_task.users', compact('users','total_user'));
     }
-    public function userDelete(User $user){
+    public function userDelete($user_id){
+        User::find($user_id)->delete();
         return back()->with('success', 'User Deleted Successfully');
-    }
-    public function userEdit(User $user){
-        return view('admin.users_task.edit', compact('user'));
-    }
-    public function userUpdate(Request $request ,User $user){
-      
-        $request -> validate([
-            'name'  => 'required|string|max:50',
-            'email' => 'required|email|unique:users,email,'.$user->id
-        ]);
-
-        $user->update([
-            "name"=> $request->name,
-            "email"=> $request->email,
-        ]);
-        return redirect(route('users'))->with('success', 'Information Updated Successfully');
     }
 }

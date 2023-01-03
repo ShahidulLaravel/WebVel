@@ -314,10 +314,12 @@
                                 <div class="dropdown-body">
                                     <ul class="profile-nav p-0 pt-3">
                                         <li class="nav-item">
-                                            <a href="../../pages/general/profile.html" class="nav-link">
+
+                                            <a href="#" class="nav-link">
                                                 <i data-feather="user"></i>
-                                                <span>Profile</span>
+                                                <span>Edit Profile</span>
                                             </a>
+                                            
                                         </li>
                                         <li class="nav-item">
                                             <a href="{{ route('logout') }}" class="nav-link" onclick="event.preventDefault();

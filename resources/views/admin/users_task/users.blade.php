@@ -31,14 +31,7 @@
                             <td>{{$user->email}}</td>
                             <td>{{$user->created_at->diffForHumans()}}</td>
                             <td>
-                                 <a  href="{{route('user.edit', $user->id)}}" class="btn btn-primary btn-sm">Edit User</a>
-                                
-                                 <form class="d-inline" action="{{route('user.delete', $user->id)}}" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button class="btn btn-danger btn-sm" type="submit">Delete</button>
-                                 </form>
-                                
+                                 <a  href="{{route('user.delete', $user->id)}}" class="btn btn-danger btn-sm">Delete</a>
                             </td>
                         </tr>
                         @endforeach
