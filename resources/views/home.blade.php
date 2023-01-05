@@ -17,9 +17,13 @@
 
                     <h3 class="text-capitalize">Hi ! Welcome Back <strong class="text-primary">{{Auth::user()->name}}</strong></h3>
                     <br>
-                    <img style="width: 150px;height:150px;border-radius:50%;" class="mb-3"  src="{{asset('upload/user')}}/{{Auth::user()->photo}}" alt="image here">
+                     @if (Auth::user()->photo == null)
+                        <img style="margin-bottom:20px;width:110px;height:110px;border-radius:50%;" src="{{ Avatar::create(Auth::user()->name)->toBase64() }}" />
+                    @else
+                        <img style="margin-bottom:20px;width:160px;height:160px;border-radius:50%;" src="{{asset('upload/user')}}/{{Auth::user()->photo}}"> 
+                    @endif
                     <br>
-                    <strong class="text-muted">{{Auth::user()->name}}</strong>
+                    <strong class="mt-3 text-muted">{{Auth::user()->name}}</strong>
                     <br>
                     <strong class="text-muted">{{Auth::user()->email}}</strong>
                 </div>

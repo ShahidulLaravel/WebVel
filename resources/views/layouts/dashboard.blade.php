@@ -299,12 +299,21 @@
                         </li>
                         <li class="nav-item dropdown nav-profile">
                             <a class="nav-link dropdown-toggle" href="#" id="profileDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <img src="{{asset('upload/user')}}/{{Auth::user()->photo}}"> 
+                                @if (Auth::user()->photo == null)
+                                    <img src="{{ Avatar::create(Auth::user()->name)->toBase64() }}" />
+                                @else
+                                  <img src="{{asset('upload/user')}}/{{Auth::user()->photo}}"> 
+                                @endif
+
                             </a>
                             <div class="dropdown-menu" aria-labelledby="profileDropdown">
                                 <div class="dropdown-header d-flex flex-column align-items-center">
                                     <div class="figure mb-3">
-                                        <img src="{{asset('upload/user')}}/{{Auth::user()->photo}}" alt="">
+                                        @if (Auth::user()->photo == null)
+                                            <img src="{{ Avatar::create(Auth::user()->name)->toBase64() }}" />
+                                        @else
+                                        <img src="{{asset('upload/user')}}/{{Auth::user()->photo}}"> 
+                                        @endif
                                     </div>
                                     <div class="info text-center">
                                         <p class="name font-weight-bold mb-0">{{Auth::user()->name}}</p>
