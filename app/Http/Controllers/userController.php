@@ -56,7 +56,7 @@ class userController extends Controller
         $extension = $upload_photo->getClientOriginalExtension();
         $file_name = Auth::id(). '.' .$extension;
         //package code
-        Image::make($upload_photo)->save(public_path('uploads/users/'.$file_name));
+        Image::make($upload_photo)->save(public_path('upload/user/'.$file_name));
         //update image and send it to databse
         User::find(Auth::id())->update([
             'photo' => $file_name,

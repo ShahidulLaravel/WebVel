@@ -2,87 +2,152 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>NobleUI Responsive Bootstrap 4 Dashboard Template</title>
-    <link rel="stylesheet" href="{{asset('backend/vendors/core/core.css')}}">
-    <link rel="stylesheet" href="{{asset('backend/fonts/feather-font/css/iconfont.css')}}">
-    <link rel="stylesheet" href="{{asset('backend/vendors/flag-icon-css/css/flag-icon.min.css')}}">
-    <link rel="stylesheet" href="{{asset('backend/css/demo_1/style.css')}}">
-    <link rel="shortcut icon" href="{{asset('backend/images/favicon.png')}}" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="apple-touch-icon" sizes="76x76" href="{{asset('Authenticate/img/apple-icon.png')}}">
+  <link rel="icon" type="image/png" href="{{asset('Authenticate/img/favicon.png')}}">
+  <title>
+    Login
+  </title>
+  <!--     Fonts and icons     -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+  <!-- Nucleo Icons -->
+  <link href="{{asset('Authenticate/css/nucleo-icons.css" rel="stylesheet')}}" />
+  <link href="{{asset('Authenticate/css/nucleo-svg.css" rel="stylesheet')}}" />
+  <!-- Font Awesome Icons -->
+  <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+  <link href="{{asset('Authenticate/css/nucleo-svg.css" rel="stylesheet')}}" />
+  <!-- CSS Files -->
+  <link id="pagestyle" href="{{asset('Authenticate/css/soft-ui-dashboard.css?v=1.0.3')}}" rel="stylesheet" />
 </head>
 
-<body>
-    <div class="main-wrapper">
-        <div class="page-wrapper full-page">
-            <div class="page-content d-flex align-items-center justify-content-center">
-
-                <div class="row w-100 mx-0 auth-page">
-                    <div class="col-md-8 col-xl-6 mx-auto">
-                        <div class="card">
-                            <div class="row">
-                                <div class="col-md-4 pr-md-0">
-                                    <div class="auth-left-wrapper" style="background:url({{asset('backend/images/05.jpg')}})">
-                                        
-                                    </div>
-                                </div>
-                                <div class="col-md-8 pl-md-0">
-                                    <div class="auth-form-wrapper px-4 py-5">
-                                        <a href="#" class="noble-ui-logo d-block mb-2">Noble<span>UI</span></a>
-                                        <h5 class="text-muted font-weight-normal mb-4">Welcome back! Log in to your account.</h5>
-                                        <form class="forms-sample" action="{{ route('login')}}" method="POST">
-                                            @csrf
-                                            <div class="form-group">
-                                                <label for="exampleInputEmail1">Email address</label>
-                                                <input name="email" type="email" class="form-control 
-                                                @error
-                                                ('email') is-invalid @enderror" id="exampleInputEmail1" placeholder="Email">
-
-                                                @error('email')
-                                                <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $message }}</strong>
-                                                </span>
-                                                @enderror
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="exampleInputPassword1">Password</label>
-                                                <input name="password" type="password" class="form-control @error('password') is-invalid @enderror" id="exampleInputPassword1" autocomplete="current-password" placeholder="Password">
-                                                @error('password')
-                                                <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $message }}</strong>
-                                                </span>
-                                                @enderror
-                                            </div>
-                                            <div class="form-check form-check-flat form-check-primary">
-                                                <label class="form-check-label">
-                                                    <input type="checkbox" class="form-check-input">
-                                                    Remember me
-                                                </label>
-                                            </div>
-                                            <div class="mt-3">
-
-                                                <button class="btn btn-warning" type="submit">Login</button>
-
-                                            </div>
-                                            <a href="{{route('register')}}" class="d-block mt-3 text-muted">Not a user? Sign up</a>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
+<body class="">
+  <div class="container position-sticky z-index-sticky top-0">
+    <div class="row">
+      <div class="col-12">
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg blur blur-rounded top-0 z-index-3 shadow position-absolute my-3 py-2 start-0 end-0 mx-4">
+          <div class="container-fluid">
+           
+            <button class="navbar-toggler shadow-none ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon mt-2">
+                <span class="navbar-toggler-bar bar1"></span>
+                <span class="navbar-toggler-bar bar2"></span>
+                <span class="navbar-toggler-bar bar3"></span>
+              </span>
+            </button>
+            <div class="collapse navbar-collapse" id="navigation">
+              <ul class="navbar-nav mx-auto">
+               
+                <li class="nav-item">
+                  <a class="nav-link me-2" href="{{route('register')}}">
+                    <i class="fas fa-user-circle opacity-6 text-dark me-1"></i>
+                    Sign Up
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link me-2" href="{{route('login')}}">
+                    <i class="fas fa-key opacity-6 text-dark me-1"></i>
+                    Sign In
+                  </a>
+                </li>
+              </ul>
+              
             </div>
-        </div>
+          </div>
+        </nav>
+        <!-- End Navbar -->
+      </div>
     </div>
+  </div>
+  <main class="main-content  mt-0">
+    <section>
+      <div class="page-header min-vh-75">
+        <div class="container">
+          <div class="row">
+            <div class="col-xl-4 col-lg-5 col-md-6 d-flex flex-column mx-auto">
+              <div class="card card-plain mt-8">
+                <div class="card-header pb-0 text-left bg-transparent">
+                  <h3 class="font-weight-bolder text-info text-gradient">Welcome back</h3>
+                  <p class="mb-0">Enter your email and password to sign in</p>
+                </div>
+                <div class="card-body">
 
 
-    <script src="{{asset('backend/vendors/core/core.js')}}"></script>
-    <script src="{{asset('backend/vendors/feather-icons/feather.min.js')}}"></script>
-    <script src="{{asset('backend/js/template.js')}}"></script>
+                  <form action="{{ route('login') }}" method="POST" role="form">
+                    @csrf 
+                    <label>Email</label>
+                    <div class="mb-3">
+                      <input name="email" type="email" class="@error('email') is-invalid @enderror form-control" placeholder="Email" aria-label="Email" aria-describedby="email-addon">
+                    @error('email')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                    </div>
 
+                    <label>Password</label>
+                    <div class="mb-3">
+                      <input name="password" type="password" class="form-control @error('password') is-invalid @enderror" placeholder="Password" aria-label="Password" aria-describedby="password-addon">
+                       @error('password')
+                            <span class="invalid-feedback" role="alert">
+                               <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+
+                    <div class="form-check form-switch">
+                      <input class="form-check-input" type="checkbox" id="rememberMe" checked="">
+                      <label class="form-check-label" for="rememberMe">Remember me</label>
+                    </div>
+
+                    <div class="text-center">
+                      <button type="submit" class="btn bg-gradient-info w-100 mt-4 mb-0">Log in</button>
+                    </div>
+                  </form>
+
+
+                </div>
+                <div class="card-footer text-center pt-0 px-lg-2 px-1">
+                  <p class="mb-4 text-sm mx-auto">
+                    Don't have an account?
+                    <a href="{{route('register')}}" class="text-info text-gradient font-weight-bold">Sign up</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="oblique position-absolute top-0 h-100 d-md-block d-none me-n8">
+                <div class="oblique-image bg-cover position-absolute fixed-top ms-auto h-100 z-index-0 ms-n6" style="background-image:url('{{asset('Authenticate/img/curved-images/curved6.jpg')}}"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+
+  <!--   Core JS Files   -->
+  <script src="{{asset('Authenticate/js/core/popper.min.js')}}"></script>
+  <script src="{{asset('Authenticate/js/core/bootstrap.min.js')}}"></script>
+  <script src="{{asset('Authenticate/js/plugins/perfect-scrollbar.min.js')}}"></script>
+  <script src="{{asset('Authenticate/js/plugins/smooth-scrollbar.min.js')}}"></script>
+  <script>
+    var win = navigator.platform.indexOf('Win') > -1;
+    if (win && document.querySelector('#sidenav-scrollbar')) {
+      var options = {
+        damping: '0.5'
+      }
+      Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
+    }
+  </script>
+  <!-- Github buttons -->
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+  <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
+  <script src="{{asset('Authenticate/js/soft-ui-dashboard.min.js?v=1.0.3')}}"></script>
 
 </body>
 </html>
+

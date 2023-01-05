@@ -15,13 +15,13 @@
                     </div>
                     @endif
 
-                    <h3 class="text-capitalize">you are successfully loggin <strong>{{Auth::user()->name}}</strong></h3>
+                    <h3 class="text-capitalize">Hi ! Welcome Back <strong class="text-primary">{{Auth::user()->name}}</strong></h3>
                     <br>
-                    <span>Profile Photo: <strong>{{Auth::user()->photo ? Auth::user()->photo:'This user not upload the profile'}}</strong></span>
+                    <img style="width: 150px;height:150px;border-radius:50%;" class="mb-3"  src="{{asset('upload/user')}}/{{Auth::user()->photo}}" alt="image here">
                     <br>
-                    <span>User Name: <strong>{{Auth::user()->name}}</strong></span>
+                    <strong class="text-muted">{{Auth::user()->name}}</strong>
                     <br>
-                    <span>User Email: <strong>{{Auth::user()->email}}</strong></span>
+                    <strong class="text-muted">{{Auth::user()->email}}</strong>
                 </div>
             </div>
 
