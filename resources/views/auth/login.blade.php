@@ -35,7 +35,9 @@
                                             @csrf
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">Email address</label>
-                                                <input name="email" type="email" class="form-control @error('email') is-invalid @enderror" id="exampleInputEmail1" placeholder="Email">
+                                                <input name="email" type="email" class="form-control 
+                                                @error
+                                                ('email') is-invalid @enderror" id="exampleInputEmail1" placeholder="Email">
 
                                                 @error('email')
                                                 <span class="invalid-feedback" role="alert">

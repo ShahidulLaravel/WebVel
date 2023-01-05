@@ -315,11 +315,11 @@
                                     <ul class="profile-nav p-0 pt-3">
                                         <li class="nav-item">
 
-                                            <a href="#" class="nav-link">
+                                            <a href="{{route('user.edit')}}" class="nav-link">
                                                 <i data-feather="user"></i>
                                                 <span>Edit Profile</span>
                                             </a>
-                                            
+
                                         </li>
                                         <li class="nav-item">
                                             <a href="{{ route('logout') }}" class="nav-link" onclick="event.preventDefault();

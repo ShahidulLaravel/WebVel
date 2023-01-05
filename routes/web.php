@@ -20,6 +20,15 @@ Route::get('/users', [userController::class, 'users'])->name('users')->middlewar
 
 Route::get('/user/delete/{user_id}', [userController::class, 'userDelete'])->name('user.delete')->middleware('auth');
 
+Route::get('/user/edit_profile', [userController::class, 'edit_profile'])->name('user.edit');
+
+Route::post('/user/update_info', [userController::class, 'update_info'])->name('update.profile.info');
+
+Route::post('/user/update_password', [userController::class, 'update_password'])->name('update.password');
+
+Route::post('/user/update_image', [userController::class, 'update_image'])->name('update.image');
+
+
 
 
 
