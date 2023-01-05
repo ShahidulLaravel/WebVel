@@ -45,19 +45,37 @@
                         </a>
                     </li>
                     <li class="nav-item nav-category">Admin</li>
+                    {{-- need to copy --}}
                     <li class="nav-item">
                         <a class="nav-link" data-toggle="collapse" href="#emails" role="button" aria-expanded="false" aria-controls="emails">
                             <i class="link-icon" data-feather="mail"></i>
                             <span class="link-title">Users</span>
                             <i class="link-arrow" data-feather="chevron-down"></i>
                         </a>
+
                         <div class="collapse" id="emails">
                             <ul class="nav sub-menu">
                                 <li class="nav-item">
                                     <a href="{{route('users')}}" class="nav-link">Users List</a>
                                 </li>
                             </ul>
-                        </div>
+                        </div>         
+                    </li>
+                    {{-- copy end --}}
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#categories" role="button" aria-expanded="false" aria-controls="emails">
+                            <i class="link-icon" data-feather="mail"></i>
+                            <span class="link-title">Product Categories</span>
+                            <i class="link-arrow" data-feather="chevron-down"></i>
+                        </a>
+
+                        <div class="collapse" id="categories">
+                            <ul class="nav sub-menu">
+                                <li class="nav-item">
+                                    <a href="{{route('category')}}" class="nav-link">Add Category</a>
+                                </li>
+                            </ul>
+                        </div>         
                     </li>
                 </ul>
             </div>
