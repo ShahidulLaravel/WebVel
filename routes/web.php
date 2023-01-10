@@ -28,6 +28,8 @@ Route::get('/category', [CategoryController::class, 'category'])->name('category
 
 Route::post('/category/store', [CategoryController::class, 'category_store'])->name('category.store');
 
+Route::get('/category/delete/{user_id}', [CategoryController::class, 'category_delete'])->name('category.delete');
+
 
 
 

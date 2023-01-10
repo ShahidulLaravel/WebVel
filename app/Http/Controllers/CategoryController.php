@@ -10,7 +10,10 @@ use Intervention\Image\Facades\Image;
 class CategoryController extends Controller
 {
     function category(){
-        return view('admin.category.category');
+        $all_category = Category::all();
+        return view('admin.category.category', [
+            'all_category' => $all_category
+        ]);
     }
 
     function category_store(Request $request){
@@ -37,4 +40,10 @@ class CategoryController extends Controller
         }
         return back()->with('success', 'Category Added Successfully');
     }
+
+    public function category_delete($user_id){
+        Category::find($user_id)->delete();
+        return back()->with('deleted', 'Category Deleted Successfully');
+    }
+    
 }
