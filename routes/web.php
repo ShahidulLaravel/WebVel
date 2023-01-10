@@ -26,9 +26,17 @@ Route::post('/user/update_image', [userController::class, 'update_image'])->name
 //Category
 Route::get('/category', [CategoryController::class, 'category'])->name('category');
 
-Route::post('/category/store', [CategoryController::class, 'category_store'])->name('category.store');
+Route::post('/category/insert', [CategoryController::class, 'category_insert'])->name('category.insert');
 
 Route::get('/category/delete/{user_id}', [CategoryController::class, 'category_delete'])->name('category.delete');
+
+Route::get('/category/edit/{user_id}', [CategoryController::class, 'category_edit'])->name('category.edit');
+
+Route::post('/category/update/', [CategoryController::class, 'category_update'])->name('category.update');
+
+Route::get('/category/restore/{restore_id}', [CategoryController::class, 'category_restore'])->name('category.restore');
+
+Route::get('/category/permanent/delete/{delete_id}', [CategoryController::class, 'category_per_del'])->name('category.del');
 
 
 

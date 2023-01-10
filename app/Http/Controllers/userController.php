@@ -51,9 +51,12 @@ class userController extends Controller
         $request->validate([
             'photo' => ['required', 'mimes:png,jpg,jpeg,JPEG,JPG,PNG'],
             'photo' => 'file|max:3072'
-        ]);
-        $prev = public_path('upload/user/'. Auth::user()->photo);
-        unlink($prev);
+        ]);  
+        //delete previous
+        if(Auth::user()->photo == !null){
+            $prev = public_path('upload/user/'. Auth::user()->photo);
+            unlink($prev);
+        }
         //file naming
         $upload_photo = $request->photo;
         $extension = $upload_photo->getClientOriginalExtension();
