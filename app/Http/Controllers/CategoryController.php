@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use Illuminate\Console\View\Components\Alert;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
@@ -94,6 +95,20 @@ class CategoryController extends Controller
         unlink($delete_from);
         Category::onlyTrashed()->find($delete_id)->forceDelete();
         return back()->with('trash_p_deleted', 'Category is Permanently Deleted');
+    }
+
+    public function category_check_del(Request $request){
+        foreach($request->category_id as $category){
+            Category::find($category)->delete();
+        };
+        return back();
+    }
+
+    public function category_check_res(Request $request){
+        foreach($request->trash as $restore_all){
+            Category::onlyTrashed()->find($restore_all)->restore();
+        }
+        return back();
     }
     
 }

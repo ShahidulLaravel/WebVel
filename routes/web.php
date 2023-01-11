@@ -38,6 +38,12 @@ Route::get('/category/restore/{restore_id}', [CategoryController::class, 'catego
 
 Route::get('/category/permanent/delete/{delete_id}', [CategoryController::class, 'category_per_del'])->name('category.del');
 
+Route::post('/category/checked/delete', [CategoryController::class, 'category_check_del'])->name('category.check_del');
+
+Route::post('/category/checked/restore_all', [CategoryController::class, 'category_check_res'])->name('category.restore_all');
+
+
+
 
 
 
