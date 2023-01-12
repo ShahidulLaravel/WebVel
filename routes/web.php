@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\userController;
 use App\Http\Controllers\FrontEndController;
+use App\Http\Controllers\SubCategoryController;
 
 // front end controller controller
 Route::get('/', [FrontEndController::class, 'index'])->name('frontHome');
@@ -41,6 +42,11 @@ Route::get('/category/permanent/delete/{delete_id}', [CategoryController::class,
 Route::post('/category/checked/delete', [CategoryController::class, 'category_check_del'])->name('category.check_del');
 
 Route::post('/category/checked/restore_all', [CategoryController::class, 'category_check_res'])->name('category.restore_all');
+
+//subcategory
+Route::get('/subcategory', [SubCategoryController::class, 'subcategory'])->name('subcategory');
+
+Route::post('/subcategory/insert', [SubCategoryController::class, 'subcategory_store'])->name('subcategory.store');
 
 
 

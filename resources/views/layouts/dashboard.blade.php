@@ -65,6 +65,8 @@
                             <ul class="nav sub-menu">
                                 <li class="nav-item">
                                     <a href="{{route('category')}}" class="nav-link">Add Category</a>
+                                    
+                                    <a href="{{route('subcategory')}}" class="nav-link">Add SubCategory</a>
                                 </li>
                             </ul>
                         </div>         
